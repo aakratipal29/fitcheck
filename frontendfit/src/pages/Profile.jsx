@@ -1,0 +1,1 @@
+import useAuth from'../hooks/useAuth';export default function Profile(){const{user}=useAuth();return <main className="profile"><div className="avatar">{user.name?.[0]}</div><h1>{user.name}</h1><p>{user.email}</p><h2>Your style profile</h2><p>Save pieces and outfits to make FitCheck feel more personal.</p></main>}

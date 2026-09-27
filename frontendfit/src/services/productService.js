@@ -1,0 +1,1 @@
+import api from'./api';export const products=(p)=>api.get('/products',{params:p});export const product=(id)=>api.get(`/products/${id}`);export const recommendations=(id)=>api.get(`/products/${id}/recommendations`);export const createProduct=(d)=>api.post('/products',d);export const removeProduct=(id)=>api.delete(`/products/${id}`);

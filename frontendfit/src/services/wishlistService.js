@@ -1,0 +1,1 @@
+import api from'./api';export const wishlist=()=>api.get('/wishlist');export const addWishlist=(productId)=>api.post('/wishlist',{productId});export const removeWishlist=(productId)=>api.delete(`/wishlist/${productId}`);

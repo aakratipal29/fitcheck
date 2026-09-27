@@ -1,0 +1,1 @@
+import{useState}from'react';export default({onChange})=>{const[p,setP]=useState('');return <label className="upload">{p?<img src={p}/>:<span>Drop a JPG, PNG, or WEBP<br/>Max 5MB</span>}<input type="file" accept="image/jpeg,image/png,image/webp" hidden onChange={e=>{const f=e.target.files[0];if(f){setP(URL.createObjectURL(f));onChange(f)}}}/></label>}

@@ -1,0 +1,1 @@
+import{Navigate}from'react-router-dom';import useAuth from'../hooks/useAuth';export default({children,admin=false})=>{const{loading,user}=useAuth();if(loading)return null;return user&&(!admin||user.role==='admin')?children:<Navigate to="/login" replace/>}

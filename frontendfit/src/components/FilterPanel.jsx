@@ -1,0 +1,1 @@
+export default({filters,setFilters})=><div className="filters">{[['style','Style'],['occasion','Occasion'],['color','Color'],['maxPrice','Max ₹']].map(([k,label])=><input key={k} placeholder={label} value={filters[k]||''} onChange={e=>setFilters({...filters,[k]:e.target.value})}/>)}</div>;

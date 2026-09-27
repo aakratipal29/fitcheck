@@ -1,0 +1,5 @@
+{
+  "name": "fitcheck",
+  "private": true,
+  "scripts": { "install:all": "npm --prefix backendfit install && npm --prefix frontendfit install" }
+}
