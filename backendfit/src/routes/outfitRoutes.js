@@ -1,0 +1,1 @@
+import {Router}from'express';import * as c from '../controllers/outfitController.js';import{authenticate}from'../middleware/authMiddleware.js';const r=Router();r.get('/recommendations',c.suggestions);r.use(authenticate);r.get('/',c.getAll);r.post('/',c.create);r.get('/:id',c.getOne);r.put('/:id',c.edit);r.delete('/:id',c.destroy);export default r;

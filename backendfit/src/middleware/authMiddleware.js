@@ -1,0 +1,1 @@
+import { verifyToken } from '../utils/jwt.js'; export const authenticate=(req,res,next)=>{try{const token=req.headers.authorization?.split(' ')[1];if(!token)throw new Error();req.user=verifyToken(token);next();}catch{res.status(401).json({success:false,message:'Authentication required or token is invalid'});}};

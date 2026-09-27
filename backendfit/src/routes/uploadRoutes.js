@@ -1,0 +1,1 @@
+import{Router}from'express';import{productImage}from'../controllers/uploadController.js';import{authenticate}from'../middleware/authMiddleware.js';import{adminOnly}from'../middleware/adminMiddleware.js';import{upload}from'../middleware/uploadMiddleware.js';const r=Router();r.post('/product',authenticate,adminOnly,upload.single('image'),productImage);export default r;

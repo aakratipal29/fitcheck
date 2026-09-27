@@ -1,0 +1,1 @@
+import { signToken } from '../utils/jwt.js'; import { safeUser } from '../models/userModel.js'; export const authResponse=(user,message)=>({success:true,message,data:{token:signToken(user),user:safeUser(user)}});

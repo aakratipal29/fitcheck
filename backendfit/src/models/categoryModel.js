@@ -1,0 +1,1 @@
+import { list, insert, update, remove } from './baseModel.js'; export const listCategories=()=>list('categories'); export const createCategory=(v)=>insert('categories',v); export const updateCategory=(id,v)=>update('categories',id,v);export const deleteCategory=(id)=>remove('categories',id);

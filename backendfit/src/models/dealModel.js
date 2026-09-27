@@ -1,0 +1,2 @@
+import { supabase } from '../config/supabase.js'; import { insert, update, remove } from './baseModel.js';
+export const listDeals=async()=>{const {data,error}=await supabase.from('deals').select('*, products(*)').eq('is_active',true).lte('start_date',new Date().toISOString()).gte('end_date',new Date().toISOString());if(error)throw error;return data}; export const createDeal=(v)=>insert('deals',v); export const updateDeal=(id,v)=>update('deals',id,v);export const deleteDeal=(id)=>remove('deals',id);

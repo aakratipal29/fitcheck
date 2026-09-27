@@ -1,0 +1,1 @@
+import {Router}from'express';import * as c from '../controllers/wishlistController.js';import{authenticate}from'../middleware/authMiddleware.js';const r=Router();r.use(authenticate);r.get('/',c.getAll);r.post('/',c.add);r.delete('/:productId',c.remove);export default r;

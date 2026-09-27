@@ -1,0 +1,1 @@
+import{Router}from'express';import * as c from'../controllers/userController.js';import{authenticate}from'../middleware/authMiddleware.js';const r=Router();r.use(authenticate);r.get('/me',c.profile);r.patch('/me',c.updateProfile);export default r;

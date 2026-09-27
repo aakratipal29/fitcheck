@@ -1,0 +1,4 @@
+import { supabase } from '../config/supabase.js'; import { insert, one, update, remove } from './baseModel.js';
+export const createOutfit=(v)=>insert('outfits',v); export const getOutfit=(id)=>one('outfits',id); export const updateOutfit=(id,v)=>update('outfits',id,v); export const deleteOutfit=(id)=>remove('outfits',id);
+export const listOutfits=async(userId)=>{const {data,error}=await supabase.from('outfits').select('*, outfit_items(*, products(*))').eq('user_id',userId); if(error)throw error;return data};
+export const replaceItems=async(outfitId,items)=>{await supabase.from('outfit_items').delete().eq('outfit_id',outfitId); if(items.length){const {error}=await supabase.from('outfit_items').insert(items.map(i=>({outfit_id:outfitId,product_id:i.productId,item_type:i.itemType||'item'})));if(error)throw error;}};

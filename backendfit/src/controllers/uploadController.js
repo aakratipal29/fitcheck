@@ -1,0 +1,1 @@
+import { assert } from '../utils/validators.js'; import { uploadProductImage } from '../services/imageService.js'; export const productImage=async(req,res)=>{assert(req.file,'A JPG, PNG, or WEBP image under 5MB is required');res.status(201).json({success:true,data:{url:await uploadProductImage(req.file)}});};

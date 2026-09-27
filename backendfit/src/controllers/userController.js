@@ -1,0 +1,1 @@
+import { getUser, updateUser, safeUser } from '../models/userModel.js'; export const profile=async(req,res)=>res.json({success:true,data:safeUser(await getUser(req.user.id))});export const updateProfile=async(req,res)=>{const {name,avatar_url,style_preferences}=req.body;res.json({success:true,data:safeUser(await updateUser(req.user.id,{name,avatar_url,style_preferences}))});};

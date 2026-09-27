@@ -1,0 +1,1 @@
+import app from './app.js';import{env,missingEnv}from './config/env.js';if(missingEnv.length)console.warn(`Warning: configure ${missingEnv.join(', ')} in .env before using database features.`);app.listen(env.port,()=>console.log(`FitCheck API listening on ${env.port}`));
